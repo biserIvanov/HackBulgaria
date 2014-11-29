@@ -1,0 +1,33 @@
+from random import randrange
+
+
+def generate_question():
+    a = randrange(200)
+    b = randrange(200)
+    action = randrange(4)
+    if action == 0:
+        answer = a + b
+        question = "What is the answer to %d + %d?" % (a, b)
+        return (question, answer)
+    elif action == 1:
+        answer = a - b
+        question = "What is the answer to %d - %d?" % (a, b)
+        return (question, answer)
+    elif action == 2:
+        answer = a * b
+        question = "What is the answer to %d * %d?" % (a, b)
+        return (question, answer)
+    elif action == 3:
+        a = float(a)
+        answer = a / b
+        answer = round(answer, 1)
+        question = "What is the answer to %d / %d?(round like 0.9)" % (a, b)
+        return (question, answer)
+
+
+def main():
+    inpt = input("Welcome to the \"Do you even math?\" game!\nHere are your options:\n- start\n- highscores")
+    print(inpt)
+
+if __name__ == "__main__":
+    main()
