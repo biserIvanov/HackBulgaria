@@ -81,6 +81,7 @@ def botGo():
         if button['text'] == "X" or button['text'] == "O":
             allOptions.remove(button)
     allOptions[0]['text'] = "O"
+    allOptions.remove(allOptions[0])
 
 
 button1 = Button(topFrame, text="  ", fg="black", font=("Arial", 14))
