@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Biso Search</title>
+        <link rel="stylesheet" type="text/css" href="/static/stylesheets/style.css">
+    </head>
+
+    <body>
+        <form method="POST" action="/search">
+            <h1>Hack Search</h1>
+            <label for="search-term">Search:</label>
+            <input id="search-term" type="text" name="key_word">
+            <button type="submit" id="results-button">Click me</button>
+        </form>
+
+        <ul id="results-list">
+        {% for url in links %}
+            <li>
+                <a href={{url}}>{{url}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+        <script type="text/javascript" src="/static/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="/static/script.js"></script>
+    </body>
+</html>
